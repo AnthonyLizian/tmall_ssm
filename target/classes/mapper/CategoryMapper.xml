@@ -3,7 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!-- 命名空间 -->
 <mapper namespace="com.how2java.tmall.mapper.CategoryMapper">
+    <!-- list -->
     <select id="list" resultType="Category">
         select * from   category order by id desc
     </select>
@@ -12,6 +14,7 @@
         select count(*) from category
     </select>
 
+    <!-- add -->
     <!--需要加上2个属性：keyProperty="id" useGeneratedKeys="true"
     以确保Category对象通过mybatis增加到数据库之后得到的id增长值会被设置在Category对象上。
     因为在保存分类图片的时候需要用到这个id值，所以这一步是必须的。-->
@@ -19,5 +22,19 @@
         insert into category ( name ) values (#{name})
     </insert>
 
+    <!-- delete -->
+    <delete id="delete">
+        delete from category where id= #{id}
+    </delete>
+
+    <!-- edit -->
+    <select id="get" resultType="Category">
+        select * from category  where id= #{id}
+    </select>
+
+    <!-- update -->
+    <update id="update" parameterType="Category" >
+        update category set name=#{name} where id=#{id}
+    </update>
 
 </mapper>

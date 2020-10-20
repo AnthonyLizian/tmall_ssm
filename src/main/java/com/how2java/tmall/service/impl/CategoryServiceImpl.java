@@ -10,19 +10,23 @@ import java.util.List;
 public class CategoryServiceImpl  implements CategoryService {
     @Autowired
     CategoryMapper categoryMapper;
-    @Override
-    public List<Category> list(Page page) {
-        return categoryMapper.list(page);
-    }
 
     @Override
-    public int total() {
-        return categoryMapper.total();
-    }
+    public List<Category> list(Page page) { return categoryMapper.list(page); }
 
     @Override
-    public void add(Category category) {
-        categoryMapper.add(category);
-    }
+    public int total() { return categoryMapper.total(); }
+
+    @Override
+    public void add(Category category) { categoryMapper.add(category); }
+
+    @Override
+    public void delete(int id) { categoryMapper.delete(id); }
+
+    @Override
+    public Category get(int id) { return categoryMapper.get(id); }
+
+    @Override
+    public void update(Category category) { categoryMapper.update(category); }
 
 }
