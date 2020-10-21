@@ -37,7 +37,7 @@
   <sql id="Base_Column_List">
     id, name
   </sql>
-  <select id="selectByExample" parameterType="com.how2java.tmall.pojo.CategoryExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.how2java.tmall.example.CategoryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct

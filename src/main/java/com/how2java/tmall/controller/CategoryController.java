@@ -26,19 +26,6 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @RequestMapping("admin_category_list")
-    public String list(Model model,Page page){
-        //通过分页插件指定分页参数
-        PageHelper.offsetPage(page.getStart(),page.getCount());
-        List<Category> cs= categoryService.list();
-        //通过PageInfo获取总数
-        int total = (int) new PageInfo<>(cs).getTotal();
-        page.setTotal(total);
-        model.addAttribute("cs", cs);
-        model.addAttribute("page", page);
-        return "admin/listCategory";
-    }
-
     @RequestMapping("admin_category_add")
     //参数 session 用于在后续获取当前应用的路径
     //UploadedImageFile 用于接受上传的图片
@@ -71,13 +58,6 @@ public class CategoryController {
         return "redirect:/admin_category_list";
     }
 
-    @RequestMapping("admin_category_edit")
-    public String edit(int id,Model model) throws IOException {
-        Category c= categoryService.get(id);
-        model.addAttribute("c", c);
-        return "admin/editCategory";
-    }
-
     @RequestMapping("admin_category_update")
     //参数 session 用于在后续获取当前应用的路径
     //UploadedImageFile 用于接受上传的图片
@@ -97,5 +77,25 @@ public class CategoryController {
             ImageIO.write(img, "jpg", file);
         }
         return "redirect:/admin_category_list";
+    }
+
+    @RequestMapping("admin_category_edit")
+    public String edit(int id,Model model) throws IOException {
+        Category c= categoryService.get(id);
+        model.addAttribute("c", c);
+        return "admin/editCategory";
+    }
+
+    @RequestMapping("admin_category_list")
+    public String list(Model model,Page page){
+        //通过分页插件指定分页参数
+        PageHelper.offsetPage(page.getStart(),page.getCount());
+        List<Category> cs= categoryService.list();
+        //通过PageInfo获取总数
+        int total = (int) new PageInfo<>(cs).getTotal();
+        page.setTotal(total);
+        model.addAttribute("cs", cs);
+        model.addAttribute("page", page);
+        return "admin/listCategory";
     }
 }
