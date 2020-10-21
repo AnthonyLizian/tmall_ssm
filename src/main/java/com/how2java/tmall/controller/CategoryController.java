@@ -1,5 +1,7 @@
 package com.how2java.tmall.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.how2java.tmall.pojo.Category;
 import com.how2java.tmall.service.CategoryService;
 import com.how2java.tmall.util.ImageUtil;
@@ -25,9 +27,12 @@ public class CategoryController {
     CategoryService categoryService;
 
     @RequestMapping("admin_category_list")
-    public String list(Model model, Page page){
-        List<Category> cs= categoryService.list(page);
-        int total = categoryService.total();
+    public String list(Model model,Page page){
+        //通过分页插件指定分页参数
+        PageHelper.offsetPage(page.getStart(),page.getCount());
+        List<Category> cs= categoryService.list();
+        //通过PageInfo获取总数
+        int total = (int) new PageInfo<>(cs).getTotal();
         page.setTotal(total);
         model.addAttribute("cs", cs);
         model.addAttribute("page", page);
