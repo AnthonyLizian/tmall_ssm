@@ -34,21 +34,17 @@
     <%-- 分类表 --%>
     <div class="listDataTableDiv">
         <table class="table table-striped table-bordered table-hover  table-condensed">
-
-            <%-- thead --%>
             <thead>
-            <tr class="success">
-                <th>ID</th>
-                <th>图片</th>
-                <th>分类名称</th>
-                <th>属性管理</th>
-                <th>产品管理</th>
-                <th>编辑</th>
-                <th>删除</th>
-            </tr>
+                <tr class="success">
+                    <th>ID</th>
+                    <th>图片</th>
+                    <th>分类名称</th>
+                    <th>属性管理</th>
+                    <th>产品管理</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+                </tr>
             </thead>
-
-            <%-- tbody --%>
             <tbody>
             <c:forEach items="${cs}" var="c">
                 <tr>
