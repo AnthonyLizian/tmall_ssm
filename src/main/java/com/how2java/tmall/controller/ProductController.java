@@ -42,7 +42,8 @@ public class ProductController {
     public String edit(Model model, int id) {
         Product p = productService.get(id);
         Category c = categoryService.get(p.getCid());
-        p.setCategory(c);
+//        p.setCategory(c);
+        model.addAttribute("c", c);
         model.addAttribute("p", p);
         return "admin/editProduct";
     }

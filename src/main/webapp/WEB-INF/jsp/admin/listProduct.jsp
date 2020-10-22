@@ -67,16 +67,10 @@
                     <td>${p.originalPrice}</td>
                     <td>${p.promotePrice}</td>
                     <td>${p.stock}</td>
-                    <td><a href="admin_productImage_list?pid=${p.id}"><span
-                            class="glyphicon glyphicon-picture"></span></a></td>
-                    <td><a href="admin_propertyValue_edit?pid=${p.id}"><span
-                            class="glyphicon glyphicon-th-list"></span></a></td>
-
-                    <td><a href="admin_product_edit?id=${p.id}"><span
-                            class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a deleteLink="true"
-                           href="admin_product_delete?id=${p.id}"><span
-                            class="     glyphicon glyphicon-trash"></span></a></td>
+                    <td><a href="admin_productImage_list?pid=${p.id}"><span class="glyphicon glyphicon-picture"></span></a></td>
+                    <td><a href="admin_propertyValue_edit?pid=${p.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
+                    <td><a href="admin_product_edit?id=${p.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a deleteLink="true" href="admin_product_delete?id=${p.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
 
                 </tr>
             </c:forEach>
@@ -95,28 +89,23 @@
                 <table class="addTable">
                     <tr>
                         <td>产品名称</td>
-                        <td><input id="name" name="name" type="text"
-                                   class="form-control"></td>
+                        <td><input id="name" name="name" type="text" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>产品小标题</td>
-                        <td><input id="subTitle" name="subTitle" type="text"
-                                   class="form-control"></td>
+                        <td><input id="subTitle" name="subTitle" type="text" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>原价格</td>
-                        <td><input id="originalPrice" value="99.98" name="originalPrice" type="text"
-                                   class="form-control"></td>
+                        <td><input id="originalPrice" value="99.98" name="originalPrice" type="text" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>优惠价格</td>
-                        <td><input id="promotePrice"  value="19.98" name="promotePrice" type="text"
-                                   class="form-control"></td>
+                        <td><input id="promotePrice"  value="19.98" name="promotePrice" type="text" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>库存</td>
-                        <td><input id="stock"  value="99" name="stock" type="text"
-                                   class="form-control"></td>
+                        <td><input id="stock"  value="99" name="stock" type="text" class="form-control"></td>
                     </tr>
                     <tr class="submitTR">
                         <td colspan="2" align="center">

@@ -35,19 +35,19 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product get(int id) {
         Product p = productMapper.selectByPrimaryKey(id);
-        setCategory(p);
+//        setCategory(p);
         return p;
     }
 
-    public void setCategory(List<Product> ps){
-        for (Product p : ps)
-            setCategory(p);
-    }
-    public void setCategory(Product p){
-        int cid = p.getCid();
-        Category c = categoryService.get(cid);
-        p.setCategory(c);
-    }
+//    public void setCategory(List<Product> ps){
+//        for (Product p : ps)
+//            setCategory(p);
+//    }
+//    public void setCategory(Product p){
+//        int cid = p.getCid();
+//        Category c = categoryService.get(cid);
+//        p.setCategory(c);
+//    }
 
     @Override
     public List list(int cid) {
@@ -55,7 +55,7 @@ public class ProductServiceImpl implements ProductService {
         example.createCriteria().andCidEqualTo(cid);
         example.setOrderByClause("id desc");
         List result = productMapper.selectByExample(example);
-        setCategory(result);
+//        setCategory(result);
         return result;
     }
 }
