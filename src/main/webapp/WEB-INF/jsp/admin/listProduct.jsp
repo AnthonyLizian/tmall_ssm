@@ -37,30 +37,28 @@
         <table
                 class="table table-striped table-bordered table-hover  table-condensed">
             <thead>
-            <tr class="success">
-                <th>ID</th>
-                <th>图片</th>
-                <th>产品名称</th>
-                <th>产品小标题</th>
-                <th width="53px">原价格</th>
-                <th width="80px">优惠价格</th>
-                <th width="80px">库存数量</th>
-                <th width="80px">图片管理</th>
-                <th width="80px">设置属性</th>
-                <th width="42px">编辑</th>
-                <th width="42px">删除</th>
-            </tr>
+                <tr class="success">
+                    <th>ID</th>
+                    <th>图片</th>
+                    <th>产品名称</th>
+                    <th>产品小标题</th>
+                    <th width="53px">原价格</th>
+                    <th width="80px">优惠价格</th>
+                    <th width="80px">库存数量</th>
+                    <th width="80px">图片管理</th>
+                    <th width="80px">设置属性</th>
+                    <th width="42px">编辑</th>
+                    <th width="42px">删除</th>
+                </tr>
             </thead>
             <tbody>
             <c:forEach items="${ps}" var="p">
                 <tr>
                     <td>${p.id}</td>
                     <td>
-
                             <%--<c:if test="${!empty p.firstProductImage}">--%>
                             <%--<img width="40px" src="img/productSingle/${p.firstProductImage.id}.jpg">--%>
                             <%--</c:if>--%>
-
                     </td>
                     <td>${p.name}</td>
                     <td>${p.subTitle}</td>
@@ -71,7 +69,6 @@
                     <td><a href="admin_propertyValue_edit?pid=${p.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
                     <td><a href="admin_product_edit?id=${p.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td><a deleteLink="true" href="admin_product_delete?id=${p.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
-
                 </tr>
             </c:forEach>
             </tbody>

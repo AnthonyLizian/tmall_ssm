@@ -24,6 +24,24 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    @RequestMapping("admin_product_list")
+    public String list(int cid, Model model, Page page) {
+        Category c = categoryService.get(cid);
+
+        PageHelper.offsetPage(page.getStart(),page.getCount());
+        List<Product> ps = productService.list(cid);
+
+        int total = (int) new PageInfo<>(ps).getTotal();
+        page.setTotal(total);
+        page.setParam("&cid="+c.getId());
+
+        model.addAttribute("ps", ps);
+        model.addAttribute("c", c);
+        model.addAttribute("page", page);
+
+        return "admin/listProduct";
+    }
+
     @RequestMapping("admin_product_add")
     public String add(Model model, Product p) {
         p.setCreateDate(new Date());
@@ -52,23 +70,5 @@ public class ProductController {
     public String update(Product p) {
         productService.update(p);
         return "redirect:admin_product_list?cid="+p.getCid();
-    }
-
-    @RequestMapping("admin_product_list")
-    public String list(int cid, Model model, Page page) {
-        Category c = categoryService.get(cid);
-
-        PageHelper.offsetPage(page.getStart(),page.getCount());
-        List<Product> ps = productService.list(cid);
-
-        int total = (int) new PageInfo<>(ps).getTotal();
-        page.setTotal(total);
-        page.setParam("&cid="+c.getId());
-
-        model.addAttribute("ps", ps);
-        model.addAttribute("c", c);
-        model.addAttribute("page", page);
-
-        return "admin/listProduct";
     }
 }
