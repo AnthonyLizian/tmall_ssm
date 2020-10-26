@@ -3,6 +3,9 @@ package com.how2java.tmall.controller;
 import java.util.Date;
 import java.util.List;
 
+import com.how2java.tmall.pojo.ProductImage;
+import com.how2java.tmall.service.ProductImageService;
+import org.apache.ibatis.annotations.Arg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +24,7 @@ import com.how2java.tmall.util.Page;
 public class ProductController {
     @Autowired
     CategoryService categoryService;
+
     @Autowired
     ProductService productService;
 

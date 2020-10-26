@@ -26,7 +26,7 @@
 <%-- body --%>
 <div class="workingArea">
 
-    <%-- head --%>
+    <%-- 菜单 --%>
     <h1 class="label label-info" >分类管理</h1>
     <br>
     <br>

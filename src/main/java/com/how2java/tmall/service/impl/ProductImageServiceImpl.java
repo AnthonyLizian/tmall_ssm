@@ -3,6 +3,7 @@ package com.how2java.tmall.service.impl;
 import java.util.List;
 
 import com.how2java.tmall.example.ProductImageExample;
+import com.how2java.tmall.pojo.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class ProductImageServiceImpl implements ProductImageService {
 
     @Autowired
     ProductImageMapper productImageMapper;
+
     @Override
     public void add(ProductImage pi) {
         productImageMapper.insert(pi);
