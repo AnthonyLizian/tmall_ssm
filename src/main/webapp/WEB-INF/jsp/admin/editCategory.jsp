@@ -24,6 +24,7 @@
 <%-- body --%>
 <div class="workingArea">
 
+    <%-- 菜单 --%>
     <ol class="breadcrumb">
         <li><a href="admin_category_list">所有分类</a></li>
         <li class="active">编辑分类</li>

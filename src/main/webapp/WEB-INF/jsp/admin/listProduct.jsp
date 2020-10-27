@@ -10,14 +10,17 @@
 <script>
     $(function() {
         $("#addForm").submit(function() {
+            <%-- 判空方法 --%>
             if (!checkEmpty("name", "产品名称"))
                 return false;
             if (!checkEmpty("subTitle", "小标题"))
              return false;
+            <%-- 判断是否是数字 --%>
             if (!checkNumber("originalPrice", "原价格"))
                 return false;
             if (!checkNumber("promotePrice", "优惠价格"))
                 return false;
+            <%-- 判断是否是int --%>
             if (!checkInt("stock", "库存"))
                 return false;
             return true;

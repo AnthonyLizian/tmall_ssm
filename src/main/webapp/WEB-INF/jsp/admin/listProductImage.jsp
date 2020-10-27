@@ -8,6 +8,7 @@
 
 <%-- script方法 --%>
 <script>
+    <%-- 判空方法 --%>
     $(function(){
         $(".addFormSingle").submit(function(){
             if(checkEmpty("filepathSingle","图片文件")){
